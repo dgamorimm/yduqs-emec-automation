@@ -11,12 +11,13 @@ def logo():
         <style>
             .container {{
                 position: relative;
-                text-align: left;
+                text-align: center;
             }}
 
             .imagem {{
-                width: 650px;
-                height: 80px;
+                width: 120px;
+                height: 120px;
+                border-radius: 40px;
             }}
         </style>
     </head>
@@ -32,4 +33,5 @@ def logo():
 def side_bar():
     st.sidebar.title('Automações')
     with st.sidebar.expander('e-MEC'):
-        st.sidebar.radio('Preencher Protocolos',key='fill_protocols')
+        options = ['Preencher Protocolos']
+        st.radio('Escolha a automação',key='automation', options=options)

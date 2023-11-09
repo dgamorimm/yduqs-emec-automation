@@ -3,7 +3,7 @@ from apps.static.html import *
 PREFIX = 'fill_protocols'
 
 def execute_automation():
-    pass
+    return 'Executado'
 
 def fill_protocols():
     uploader_file(f'file_{PREFIX}')

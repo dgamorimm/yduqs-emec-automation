@@ -10,7 +10,7 @@ def uploader_file(key_name_file:str):
 def input_link(key_name_link:str):
     return st.text_input('Insera o link aqui',key=key_name_link)
 
-def button(function_name:function, params:tuple = None):
+def button(function_name, params:tuple = None):
     if params:
         return st.button(
             'Executar',
