@@ -16,7 +16,8 @@ def execute_automation():
 def fill_protocols():
     st.markdown("""## *Inputs*""")    
     uploader_file(f'file_{PREFIX}')
-    input_link(f'link_{PREFIX}')
+    input_link('Insira o link para protocolar', f'link_{PREFIX}')
+    input_link('Insira o número da IES', f'link_discipline{PREFIX}')
     
     st.divider()
     
@@ -31,5 +32,5 @@ def fill_protocols():
     if st.session_state['login_emec']:
         button(execute_automation, 'Executar')
     else:
-        st.warning('⚠ Você tem que realizar o login na nova janela poder executar o robô')
+        st.warning('⚠ Você tem que realizar o login para executar a automação')
     

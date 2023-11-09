@@ -11,8 +11,8 @@ def login():
     st.text_input('CPF', max_chars=11, key='cpf')
     st.text_input('Senha', type='password', key='password')
 
-def input_link(key_name_link:str):
-    return st.text_input('Insera o link aqui',key=key_name_link)
+def input_link(label:str, key_name_link:str):
+    return st.text_input(label,key=key_name_link)
 
 def button(function_name,name:str, params:tuple = None):
     if params:
