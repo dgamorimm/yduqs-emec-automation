@@ -27,6 +27,7 @@ class Action():
     def close_page(self):
         driver = self.driver
         driver.quit()
+        driver.close()
     
     def text_clear(self, text_tag):
         self.find(text_tag).clear()
@@ -78,9 +79,12 @@ class Action():
             else:
                 raise('Não foi possivel clicar no elemento')
             
-    def select(self, select_tag, value_tag):
+    def select(self, select_tag, value_tag,  mode: str = 'value'):
         select = Select(self.find((select_tag)))
-        select.select_by_value(value_tag)
+        if mode == 'value':
+            select.select_by_value(value_tag)
+        else:
+            select.select_by_visible_text(value_tag.strip())
     
     def alert_accept(self, timeout=10):
         alert = WebDriverWait(self.driver, timeout).until(alert_is_present(),
