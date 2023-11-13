@@ -1,10 +1,16 @@
 <img class="imagem" src="https://yt3.googleusercontent.com/Zw6DksF6r6iGrKd2_IoqY93NXDtvS6D-8qWfUjw8ImZvA39QrUUQw4f2cFnA7y39-Oy8GFAn=s176-c-k-c0x00ffffff-no-rj" alt="YDUQS" style="width:300px;height:200px;border-radius: 100px;display: block; margin-left: auto; margin-right: auto;">
 
----
-toc: true
----
+# Sumário
+- [Sumário](#sumário)
+  - [Pré Requisitos ](#pré-requisitos-)
+  - [Preparando o ambiente ](#preparando-o-ambiente-)
+  - [Executando a aplicação ](#executando-a-aplicação-)
+  - [Acessando a aplicação ](#acessando-a-aplicação-)
+  - [Iniciando a aplicação ](#iniciando-a-aplicação-)
+  - [Logs ](#logs-)
+  - [Suporte ](#suporte-)
 
-## Pré Requisitos
+## Pré Requisitos <a name="pré-requisitos-"></a>
 + **Python:** versão 3.10.11
 + **SO:** Windows 10
 + **Input:** Arquivo excel respeitando a ordem das colunas
@@ -16,7 +22,7 @@ toc: true
   6. BibliografiaComplementar -> Célula[ <font color='red'>F1</font> ]
 
 
-## Preparando o ambiente
+## Preparando o ambiente <a name="preparando-o-ambiente-"></a>
 + Criar o ambiente (*Executar o comando no terminal do powershell*)
   + **```python -m venv .venv```**
 + Ativar o ambiente (*Executar o comando no terminal do powershell*)
@@ -26,17 +32,17 @@ toc: true
 + Instalando as libs (*Executar o comando no terminal do powershell*)
   + **```pip install -r requirements.txt```**
 
-## Executando a aplicação
+## Executando a aplicação <a name="executando-a-aplicação-"></a>
 + Executar o comando no terminal do powershell
   + **```python setup.py```**
 
-## Acessando a aplicação
+## Acessando a aplicação <a name="acessando-a-aplicação-"></a>
 + Abrir o navegador e colocar o seguinte endereço
   + <a href="http://localhost:8501" target="_blank">http://localhost:8501</a>
 
 ![AppInit](image/app-init.png)
 
-## Iniciando a aplicação
+## Iniciando a aplicação <a name="iniciando-a-aplicação-"></a>
 + Adicionando as camadas de input
 
 ![AppInputs](image/inputs.png)
@@ -56,8 +62,8 @@ toc: true
 
 ![AppExecute](image/execute.png)
 
-## Logs
+## Logs <a name="logs-"></a>
 ![AppLogs](image/logs.png)
 
-## Suporte
+## Suporte <a name="suporte-"></a>
 ![AppSupport](image/support.png)
