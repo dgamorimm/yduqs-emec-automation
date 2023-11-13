@@ -47,8 +47,47 @@ def logo():
     """
     return components.html(html=logo)
 
-def side_bar():
+def menu():
     st.sidebar.title('Automações')
     with st.sidebar.expander('e-MEC'):
-        options = ['Preencher Protocolos']
-        st.radio('Escolha a automação',key='automation', options=options)
+        options = ['Preencher Protocolos', 'Outros']
+        return st.radio('Escolha a automação',key='automation', options=options)
+
+def baseboard():
+    st.sidebar.markdown("""
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        
+                        <style>
+                        a {
+                            text-decoration: none;
+                        }
+                        </style>
+                        
+                        <hr>
+                        
+                        *Desenvolvido por [Douglas Amorim](https://www.linkedin.com/in/douglas--amorim/)   <img src="https://cdn.icon-icons.com/icons2/1996/PNG/512/linkedin_network_people_professional_profile_services_users_icon_123279.png" height="20">*
+                        """,
+   unsafe_allow_html=True)

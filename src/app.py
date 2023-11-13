@@ -1,11 +1,13 @@
 from static.html import *
-from apps.fill_protocols import fill_protocols
+from apps.register_protocols import register_protocols
 
 page_config()
-side_bar()
 logo()
-tab = tabs()
-with tab[0]:
-    fill_protocols()
-with tab[1]:
-    ...
+automation = menu()
+baseboard()
+if automation == 'Preencher Protocolos':
+    tab = tabs()
+    with tab[0]:
+        register_protocols()
+    with tab[1]:
+        ...

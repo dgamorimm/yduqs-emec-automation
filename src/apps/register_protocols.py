@@ -7,12 +7,13 @@ from apps.utils.file import read_excel, read_excel_all
 
 PREFIX = 'fill_protocols'
 URL = 'https://emec.mec.gov.br/ies'
-st.session_state['Progress'] = ('Start',None)
 
 id_ = TagId()
 class_ = TagClass()
 xpath_ = TagXPath()
 css_ = TagCSS()
+
+st.session_state['Progress'] = ('Start',None)
 
 def _register_protocol(attempt:int = 0, error:str = None):
     st.session_state['Progress'] = ('Register Protocol',)
@@ -105,11 +106,14 @@ def execute_automation():
             st.session_state['Progress'] = ('Error',error)
     else:
         action.close_page()
-        st.session_state['Progress'] = ('Error',error)
-
-def fill_protocols():
+        st.session_state['Progress'] = ('Error',error) 
+    
+def register_protocols():
     # st.write(st.session_state)
+    if 'Progress' not in st.session_state:
+        st.session_state['Progress'] = ('Start',)
     global excel_file_protocol
+    
     st.markdown("""## *Inputs*""")    
     excel_file_protocol = st_uploader(f'file_{PREFIX}')
     st_input_text('Insira o link para protocolar', f'link_{PREFIX}')
