@@ -14,12 +14,12 @@
 + **Python:** versão 3.10.11
 + **SO:** Windows 10
 + **Input:** Arquivo excel respeitando a ordem das colunas
-  1. Periodo --------------------> Célula[ <font color='red'>A1</font> ]
-  2. Disciplina ------------------> Célula[ <font color='red'>B1</font> ]
-  3. Horas ----------------------> Célula[ <font color='red'>C1</font> ]
-  4. Ementa ---------------------> Célula[ <font color='red'>D1</font> ]
-  5. BibliografiaBasica ----------> Célula[ <font color='red'>E1</font> ]
-  6. BibliografiaComplementar -> Célula[ <font color='red'>F1</font> ]
+  1. Periodo --------------------> Célula[<span style="color:red">A1</span>]
+  2. Disciplina ------------------> Célula[<span style="color:red">B1</span>]
+  3. Horas ----------------------> Célula[<span style="color:red">C1</span>]
+  4. Ementa ---------------------> Célula[<span style="color:red">D1</span>]
+  5. BibliografiaBasica ----------> Célula[<span style="color:red">F1</span>]
+  6. BibliografiaComplementar -> Célula[<span style="color:red">E1</span>]
 
 
 ## Preparando o ambiente <a name="preparando-o-ambiente-"></a>
