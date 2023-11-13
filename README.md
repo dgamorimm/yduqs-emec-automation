@@ -28,7 +28,7 @@
 
 ## Acessando a aplicação
 + Abrir o navegador e colocar o seguinte endereço
-  + ![http://localhost:8501](http://localhost:8501)
+  + [http://localhost:8501](http://localhost:8501)
 
 ![AppInit](image/app-init.png)
 
