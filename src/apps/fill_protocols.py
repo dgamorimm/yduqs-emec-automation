@@ -7,7 +7,7 @@ from apps.utils.file import read_excel, read_excel_all
 
 PREFIX = 'fill_protocols'
 URL = 'https://emec.mec.gov.br/ies'
-st.session_state['Progress'] = ('Start',)
+st.session_state['Progress'] = ('Start',None)
 
 id_ = TagId()
 class_ = TagClass()
@@ -108,23 +108,19 @@ def execute_automation():
         st.session_state['Progress'] = ('Error',error)
 
 def fill_protocols():
+    # st.write(st.session_state)
     global excel_file_protocol
-    st.write(st.session_state)
     st.markdown("""## *Inputs*""")    
     excel_file_protocol = st_uploader(f'file_{PREFIX}')
     st_input_text('Insira o link para protocolar', f'link_{PREFIX}')
     st_input_text('Insira o número da IES', f'link_discipline_{PREFIX}')
     
     st.divider()
-    
-    # st.markdown("""## *Login*""") 
-
-    # st_login()
+    st.markdown("""## *Login*""") 
     st_button(login_emec,'Login', 'login_button')
     
     st.divider()    
     st.markdown("""## *Run*""")
-    
     if st.session_state['login_button']:
         st_button(execute_automation, 'Executar', 'login_running')
     else:
@@ -132,7 +128,6 @@ def fill_protocols():
     
     st.divider()    
     st.markdown("""## *Progress*""")
-    
     if st.session_state['Progress'][0] not in ['Success', 'Error']:
         st.info(st.session_state['Progress'][0])
     elif st.session_state['Progress'][0] == 'Success':

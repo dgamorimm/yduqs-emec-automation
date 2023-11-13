@@ -27,7 +27,6 @@ class Action():
     def close_page(self):
         driver = self.driver
         driver.quit()
-        driver.close()
     
     def text_clear(self, text_tag):
         self.find(text_tag).clear()
