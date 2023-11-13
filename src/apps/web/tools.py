@@ -1,8 +1,9 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import presence_of_element_located, \
-visibility_of_element_located
+visibility_of_element_located, alert_is_present
 from selenium.webdriver.common.keys import Keys
 from time import sleep
+from selenium.webdriver.support.ui import Select
 
 class Action():
     def __init__(self, driver) -> None:
@@ -26,6 +27,9 @@ class Action():
     def close_page(self):
         driver = self.driver
         driver.quit()
+    
+    def text_input(self,text_tag, text:str):
+        self.find(text_tag).send_keys(text)
         
     def login(self,
                      username_tag : str,
@@ -70,3 +74,12 @@ class Action():
                 return self.click_element(click_tag, attempts)
             else:
                 raise('Não foi possivel clicar no elemento')
+            
+    def select(self, select_tag, value_tag):
+        select = Select(self.find((select_tag)))
+        select.select_by_value(value_tag)
+    
+    def alert_accept(self, timeout=10):
+        alert = WebDriverWait(self.driver, timeout).until(alert_is_present(),
+                                    'Tempo limite esgotado aguardando o pop-up de alerta aparecer.')
+        alert.accept()

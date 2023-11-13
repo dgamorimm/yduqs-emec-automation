@@ -33,17 +33,12 @@ class Settings:
         self.opp.add_argument('--remote-debugging-port=9922')
         return self.opp
 
-    def service(self):
-        return webdriver.ChromeService(executable_path='C:\\Users\\dougl\\development\\src\\apps\\web\\chromedriver\\chromedriver.exe')
-
 class Driver(Settings):
     def __init__(self):
         super().__init__()
     
     
     def get(self):
-        service = self.service()
-        service.start()
-        driver = webdriver.Chrome(service=service.service_url, options=self.options())
+        driver = webdriver.Chrome(options=self.options())
         driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})") 
         return driver
