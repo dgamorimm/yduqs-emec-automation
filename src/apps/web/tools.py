@@ -28,6 +28,9 @@ class Action():
         driver = self.driver
         driver.quit()
     
+    def text_clear(self, text_tag):
+        self.find(text_tag).clear()
+        
     def text_input(self,text_tag, text:str):
         self.find(text_tag).send_keys(text)
         

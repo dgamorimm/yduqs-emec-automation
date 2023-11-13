@@ -1,11 +1,17 @@
 import streamlit as st
+from openpyxl import load_workbook
+from io import BytesIO
 
 def st_uploader(key_name_file:str):
-    return st.file_uploader(
+    uploader = st.file_uploader(
     'Suba seu arquivo aqui',
     type=['xlsx'],
     key=key_name_file
     )
+    if uploader is not None:
+        bytes_data = uploader.getvalue()
+        workbook = load_workbook(filename=BytesIO(bytes_data))
+        return workbook.active
 
 def st_login():
     st.text_input('CPF', max_chars=11, key='cpf')
