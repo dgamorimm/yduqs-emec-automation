@@ -4,13 +4,15 @@ from apps.web.driver import Driver
 from apps.web.tools import Action
 from apps.web.elements import TagId, TagClass
 from apps.utils.file import read_excel, read_excel_all
+from apps.utils import logs
 from loguru import logger
 
 PREFIX = 'fill_protocols'
 URL = 'https://emec.mec.gov.br/ies'
-LOG = 'data/register_protocol.log'
+LOG = 'src/apps/data/register_protocol.log'
 
-logger.add(LOG, format="{time} - {level} - {message}")
+logger.remove()
+logger.add(LOG, format="{time}|register_protocol|{level}|{name}|{function}|{line}|{message}")
 
 id_ = TagId()
 class_ = TagClass()
@@ -91,6 +93,7 @@ def _navigate_IES():
         return False, {'Error' : str(error)}
 
 def login_emec():
+    logs.log_monitor(LOG)
     st.session_state['Progress'] = ('Login',)
     global driver
     global action
@@ -122,7 +125,7 @@ def execute_automation():
             st.session_state['Progress'] = ('Error',error)
     else:
         action.close_page()
-        st.session_state['Progress'] = ('Error',error) 
+        st.session_state['Progress'] = ('Error',error)
     
 def register_protocols():
     # st.write(st.session_state)
@@ -151,9 +154,7 @@ def register_protocols():
     if st.session_state['Progress'][0] not in ['Success', 'Error']:
         st.info(st.session_state['Progress'][0])
     elif st.session_state['Progress'][0] == 'Success':
-        st.markdown("""
-                    > *Automação executada com sucesso* ✅
-                    """)
+        st.success("Automação executada com sucesso ✅")
     elif st.session_state['Progress'][0] == 'Error':
         st.markdown("""
                     > *Automação com problemas* 🚨
