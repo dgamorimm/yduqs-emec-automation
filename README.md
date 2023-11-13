@@ -28,7 +28,7 @@
 
 ## Acessando a aplicação
 + Abrir o navegador e colocar o seguinte endereço
-  + [http://localhost:8501](http://localhost:8501){:target="_blank"}
+  + <a href="http://localhost:8501" target="_blank">http://localhost:8501</a>
 
 ![AppInit](image/app-init.png)
 
