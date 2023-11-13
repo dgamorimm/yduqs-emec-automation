@@ -2,14 +2,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import presence_of_element_located, \
 visibility_of_element_located, alert_is_present
 from selenium.webdriver.common.keys import Keys
-from time import sleep
 from selenium.webdriver.support.ui import Select
+from time import sleep
 
 class Action():
+    
     def __init__(self, driver) -> None:
         self.driver = driver
         
-            
     def find(self, *locator, timeout=30):
         return WebDriverWait(self.driver, timeout).until(presence_of_element_located(*locator))
 
