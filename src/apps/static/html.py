@@ -20,6 +20,9 @@ def st_login():
 def st_input_text(label:str, key_name_link:str):
     return st.text_input(label,key=key_name_link)
 
+def st_radio_button(title_text:str, options:list, horizontal:bool = True):
+    return st.radio(title_text, options=options, horizontal=horizontal)
+
 def st_button(function_name, name:str, key_name_button:str, params:tuple = None):
     if params:
         return st.button(

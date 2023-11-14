@@ -83,7 +83,7 @@ def _navigate_IES():
         logger.info("Clicando no login")
         action.click(class_.sign_in,2)
         logger.info("Pesquisando a IES")
-        action.text_input(id_.search_ies, st.session_state[f'link_discipline_{PREFIX}'])
+        action.text_input(id_.search_ies, st.session_state[f'link_discipline_{PREFIX}'],'slow')
         sleep(8)
         logger.info("Clicando na IES")
         action.click(class_.ies,2)
@@ -92,14 +92,14 @@ def _navigate_IES():
         logger.error(str(error))
         return False, {'Error' : str(error)}
 
-def login_emec():
+def login_emec(browser):
     logs.log_monitor(LOG)
     st.session_state['Progress'] = ('Login',)
     global driver
     global action
     logger.info(" ================ START ================ ")
     logger.info("Acionando o driver")
-    driver = Driver().get()
+    driver = Driver(browser).get()
     action = Action(driver)
     logger.info("Acessando a página de login")
     action.access_page(URL, 3)
@@ -133,6 +133,10 @@ def register_protocols():
         st.session_state['Progress'] = ('Start',)
     global excel_file_protocol
     
+    st.markdown("""## *Browser*""")
+    browser = st_radio_button('Escolha o navegador:', ['Chrome', 'Edge'], True)
+    
+    st.divider()
     st.markdown("""## *Inputs*""")    
     excel_file_protocol = st_uploader(f'file_{PREFIX}')
     st_input_text('Insira o link para protocolar', f'link_{PREFIX}')
@@ -140,7 +144,7 @@ def register_protocols():
     
     st.divider()
     st.markdown("""## *Login*""") 
-    st_button(login_emec,'Login', 'login_button')
+    st_button(login_emec,'Login', 'login_button', (browser, ))
     
     st.divider()    
     st.markdown("""## *Run*""")

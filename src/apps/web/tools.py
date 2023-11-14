@@ -31,8 +31,13 @@ class Action():
     def text_clear(self, text_tag):
         self.find(text_tag).clear()
         
-    def text_input(self,text_tag, text:str):
-        self.find(text_tag).send_keys(text)
+    def text_input(self,text_tag, text:str, mode:str ='fast'):
+        if mode == 'fast':
+            driver = self.driver
+            element = self.find(text_tag)
+            driver.execute_script("arguments[0].value = arguments[1];", element, text)
+        else:
+            self.find(text_tag).send_keys(text)
         
     def login(self,
                      username_tag : str,

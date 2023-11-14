@@ -23,18 +23,12 @@
 
 
 ## Preparando o ambiente <a name="preparando-o-ambiente-"></a>
-+ Criar o ambiente (*Executar o comando no terminal do powershell*)
-  + **```python -m venv .venv```**
-+ Ativar o ambiente (*Executar o comando no terminal do powershell*)
-  + **```.venv/Scripts/activate```**
-+ Atualizando o Pip (*Executar o comando no terminal do powershell*)
-  + **```python -m pip install --upgrade pip```**
-+ Instalando as libs (*Executar o comando no terminal do powershell*)
-  + **```pip install -r requirements.txt```**
++ Instalando as libs para o funcionamento da aplicação(*Executar o comando no terminal do powershell ou cmd apenas uma **única vez***)
+  + **```pip install -r .\requirements.txt```**
 
 ## Executando a aplicação <a name="executando-a-aplicação-"></a>
-+ Executar o comando no terminal do powershell
-  + **```python setup.py```**
++ Executar o comando no terminal do powershell ou cmd sempre que for usar a aplicação
+  + **```python .\setup.py```**
 
 ## Acessando a aplicação <a name="acessando-a-aplicação-"></a>
 + Abrir o navegador e colocar o seguinte endereço
@@ -43,7 +37,13 @@
 ![AppInit](image/app-init.png)
 
 ## Iniciando a aplicação <a name="iniciando-a-aplicação-"></a>
++ Escolha o navegador
+
+![AppNavegador](image/navigator.png)
 + Adicionando as camadas de input
+  + Arquivo Excel
+  + Link para registrar as ementas
+  + Código da IES
 
 ![AppInputs](image/inputs.png)
 
