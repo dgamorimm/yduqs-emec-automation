@@ -7,6 +7,7 @@ class TagId:
         self.password = (By.ID, 'password')
         self.alert_proto = (By.ID, 'inputPrototypeButton1')
         self.login = (By.ID, 'submit-button')
+        self.sign_in = (By.ID, 'buttonAcessoGovBr')
         self.search_ies = (By.ID, 'pesq_nome')
         self.register_discipline = (By.ID, 'cadastrar_componente')
         self.register_discipline_name = (By.ID, 'txtDsDisciplina')
@@ -23,6 +24,12 @@ class TagId:
         
 class TagClass:
     def __init__(self) -> None:
-        self.sign_in = (By.CLASS_NAME, 'sign-in-govBr')
+        
         self.continue_login = (By.CLASS_NAME, 'button-continuar')
         self.ies = (By.CLASS_NAME, 'corDetalhe_1')
+
+class TagCSS:
+    def __init__(self) -> None:
+        
+        self.teachers_onclicks = (By.CSS_SELECTOR, 'td[onclick]')
+        self.teachers_cpfs = (By.CSS_SELECTOR, 'td[align="center"]')

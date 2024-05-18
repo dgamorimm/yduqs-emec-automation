@@ -50,7 +50,7 @@ def logo():
 def menu():
     st.sidebar.title('Automações')
     with st.sidebar.expander('e-MEC'):
-        options = ['Preencher Protocolos']
+        options = ['Preencher Protocolos', 'Preencher Atributo Docente']
         return st.radio('Escolha a automação',key='automation', options=options)
 
 def baseboard():

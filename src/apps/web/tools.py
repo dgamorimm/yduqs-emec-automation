@@ -4,12 +4,26 @@ visibility_of_element_located, alert_is_present
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from time import sleep
+from loguru import logger
+LOG = 'src/apps/data/register_teacher_attribute.log'
+
+logger.remove()
+logger.add(LOG, format="{time}|register_attribute_teacher|{level}|{name}|{function}|{line}|{message}")
 
 class Action():
     
     def __init__(self, driver) -> None:
         self.driver = driver
-        
+    
+    def element_exists(self, tag : object, timeout : int = 10) -> bool:
+        try:
+            _ = WebDriverWait(self.driver, timeout).until(presence_of_element_located(tag))
+            logger.info('Element exists')
+            return True
+        except:
+            logger.warning('Element not exists')
+            return False
+    
     def find(self, *locator, timeout=30):
         return WebDriverWait(self.driver, timeout).until(presence_of_element_located(*locator))
 

@@ -79,9 +79,10 @@ def _navigate_IES():
         logger.info("Acessando a página inicial")
         action.access_page(URL, 3)
         logger.info("Clicando no pop-up")
-        action.click(id_.alert_proto,1)
+        if action.element_exists(tag=id_.alert_proto, timeout=5):
+            action.click(id_.alert_proto,1)
         logger.info("Clicando no login")
-        action.click(class_.sign_in,2)
+        action.click(id_.sign_in,2)
         logger.info("Pesquisando a IES")
         action.text_input(id_.search_ies, st.session_state[f'link_discipline_{PREFIX}'],'slow')
         sleep(8)
